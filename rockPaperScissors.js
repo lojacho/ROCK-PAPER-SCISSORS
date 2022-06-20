@@ -37,6 +37,7 @@ function playRound(playerSelection, computerSelection) {
 let countPlayer=0;
 let countComputer=0;
 
+/*
 for (let i = 0; i < 5; i++) {
     var playerSelection = window.prompt('rock,scissors,paper')
     playerSelection = playerSelection.toLowerCase();
@@ -46,3 +47,4 @@ for (let i = 0; i < 5; i++) {
         (countPlayer>countComputer)? alert(`WIN ${countPlayer} vs ${countComputer}`):alert(`LOOSE ${countPlayer} vs ${countComputer} `);
     }
  }
+ */

@@ -1,6 +1,6 @@
 function computerPlay (){
 
-    const choices = ['rock', 'paper', 'scissors'];
+    const choices = ['rock', 'scissors', 'paper'];
     const computerChoice = choices[Math.floor(Math.random() *choices.length)];
     return computerChoice; 
 }
@@ -18,6 +18,9 @@ function playRound(playerSelection, computerSelection) {
             else { result.textContent =`GANASTE ${playerSelection} gana a ${computerSelection}`;
             countPlayer=countPlayer+1;
             countPlayerDisplay.textContent =`Marcador Jugador =  ${countPlayer}`;} 
+            if (countPlayer == 5 || countComputer ==5 ){
+                (countPlayer>countComputer)? alert(`WIN ${countPlayer} vs ${countComputer}`):alert(`LOOSE ${countPlayer} vs ${countComputer} `);
+            }
             break;  
         case 'paper':
             if (computerSelection == 'rock'){ result.textContent =`GANASTE ${playerSelection} gana a ${computerSelection}`;
@@ -27,6 +30,9 @@ function playRound(playerSelection, computerSelection) {
             else { result.textContent =`PERDISTE ${playerSelection} pierde contra ${computerSelection}`;
             countComputer=countComputer+1;
             countComputerDisplay.textContent =`Marcador Computador =  ${countComputer}`;} 
+            if (countPlayer == 5 || countComputer ==5 ){
+                (countPlayer>countComputer)? alert(`WIN ${countPlayer} vs ${countComputer}`):alert(`LOOSE ${countPlayer} vs ${countComputer} `);
+            }
             break;  
         case 'scissors':
             if (computerSelection == 'rock'){ result.textContent =`PERDISTE ${playerSelection} pierde contra ${computerSelection}`;
@@ -36,6 +42,9 @@ function playRound(playerSelection, computerSelection) {
             countPlayer=countPlayer+1;
             countPlayerDisplay.textContent =`Marcador Jugador =  ${countPlayer}`;}
             else { result.textContent =`EMPATE ${playerSelection} es igual ${computerSelection}`;} 
+            if (countPlayer == 5 || countComputer ==5 ){
+                (countPlayer>countComputer)? alert(`WIN ${countPlayer} vs ${countComputer}`):alert(`LOOSE ${countPlayer} vs ${countComputer} `);
+            }
             break; 
         default:
         alert(`opcion no es correcta`);
@@ -62,8 +71,6 @@ let countComputer=0;
       var playerSelection = button.id;
       var computerSelection = computerPlay();
       playRound(playerSelection, computerSelection);
-      if (countPlayer == 5 || countComputer ==5 ){
-        (countPlayer>countComputer)? alert(`WIN ${countPlayer} vs ${countComputer}`):alert(`LOOSE ${countPlayer} vs ${countComputer} `);
-    }
+     
     });
   }); 
